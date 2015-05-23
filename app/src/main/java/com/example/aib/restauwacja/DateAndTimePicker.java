@@ -72,16 +72,6 @@ public class DateAndTimePicker extends ActionBarActivity {
     }
 
 
-
-  /*    @Override
-  protected Dialog onCreateDialog(int d_id)
-    {
-        if (d_id == DATE_DIALOG_ID)
-            return new DatePickerDialog(this, dpickerListener, year_x, mounth_x, day_x);
-        return null;
-    }*/
-
-
     private DatePickerDialog.OnDateSetListener dpickerListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -106,6 +96,16 @@ public class DateAndTimePicker extends ActionBarActivity {
 
     }
 
+    protected TimePickerDialog.OnTimeSetListener tpickerListener = new TimePickerDialog.OnTimeSetListener() {
+        @Override
+        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+            hour_x = hourOfDay;
+            minute_x = minute;
+            Toast.makeText(DateAndTimePicker.this, hour_x + ":" + minute_x, Toast.LENGTH_SHORT).show();
+
+        }
+    };
+
     @Override
     protected Dialog onCreateDialog(int id)
     {
@@ -116,16 +116,6 @@ public class DateAndTimePicker extends ActionBarActivity {
             return new DatePickerDialog(this, dpickerListener, year_x, mounth_x, day_x);
         return null;
     }
-
-    protected TimePickerDialog.OnTimeSetListener tpickerListener = new TimePickerDialog.OnTimeSetListener() {
-        @Override
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            hour_x = hourOfDay;
-            minute_x = minute;
-            Toast.makeText(DateAndTimePicker.this, hour_x + ":" + minute_x, Toast.LENGTH_SHORT).show();
-
-        }
-    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

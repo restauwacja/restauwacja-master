@@ -1,5 +1,6 @@
 package com.example.aib.restauwacja;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -27,7 +29,7 @@ public class DateAndTimePicker extends ActionBarActivity {
     int hour_x, minute_x;
 
     static final int DATE_DIALOG_ID = 0;
-    static final int TIME_DIALOG_ID = 0;
+    static final int TIME_DIALOG_ID = 1;
 
 
 
@@ -39,7 +41,7 @@ public class DateAndTimePicker extends ActionBarActivity {
         year_x = cal.get(Calendar.YEAR);
         mounth_x = cal.get(Calendar.MONTH);
         day_x = cal.get(Calendar.DAY_OF_MONTH);
-        //showDateOnButtonClick();
+        showDateOnButtonClick();
         showTimeOnButtonClick();
         edit = (EditText) findViewById(R.id.amountEditText);
         reserveBtn = (Button) findViewById(R.id.makeReservationButton);
@@ -54,7 +56,7 @@ public class DateAndTimePicker extends ActionBarActivity {
         });
     }
 
-    /*public void showDateOnButtonClick()
+    public void showDateOnButtonClick()
     {
         dateBtn = (Button)findViewById(R.id.datePickerButton);
 
@@ -67,7 +69,7 @@ public class DateAndTimePicker extends ActionBarActivity {
                     }
                 }
         );
-    }*/
+    }
 
 
 
@@ -77,7 +79,7 @@ public class DateAndTimePicker extends ActionBarActivity {
         if (d_id == DATE_DIALOG_ID)
             return new DatePickerDialog(this, dpickerListener, year_x, mounth_x, day_x);
         return null;
-    }
+    }*/
 
 
     private DatePickerDialog.OnDateSetListener dpickerListener = new DatePickerDialog.OnDateSetListener() {
@@ -88,7 +90,7 @@ public class DateAndTimePicker extends ActionBarActivity {
             day_x = dayOfMonth;
             Toast.makeText(DateAndTimePicker.this, day_x + "/" + mounth_x + "/" + year_x, Toast.LENGTH_SHORT).show();
         }
-    };*/
+    };
 
     public void showTimeOnButtonClick()
     {
@@ -105,10 +107,13 @@ public class DateAndTimePicker extends ActionBarActivity {
     }
 
     @Override
-    protected Dialog onCreateDialog(int t_id)
+    protected Dialog onCreateDialog(int id)
     {
-        if (t_id == TIME_DIALOG_ID)
+
+        if (id == TIME_DIALOG_ID)
             return new TimePickerDialog(DateAndTimePicker.this, tpickerListener, hour_x, minute_x, true);
+        else if (id == DATE_DIALOG_ID)
+            return new DatePickerDialog(this, dpickerListener, year_x, mounth_x, day_x);
         return null;
     }
 

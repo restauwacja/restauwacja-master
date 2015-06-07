@@ -15,12 +15,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon2"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".Login"
-            android:label="@string/title_activity_login">
+            android:name=".Login_"
+            android:label="RESTAU WACJA">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +36,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".MapsActivity_"
             android:label="@string/title_activity_maps" >
             <intent-filter>
                 <action android:name="com.example.aib.restauwacja.MapsActivity" />
@@ -46,7 +46,7 @@
         </activity>
 
         <activity
-            android:name=".DateAndTimePicker"
+            android:name=".DateAndTimePicker_"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="com.example.aib.restauwacja.DateAndTimePicker" />
@@ -55,28 +55,20 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".Registration"
-            android:label="@string/title_activity_registration">
-            <intent-filter>
-                <action android:name="com.example.aib.restauwacja.Registration" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Registration_"/>
 
         <activity
-            android:name=".RestaurationDetails"
+            android:name=".RestaurationDetails_"
             android:label="@string/title_activity_restauration_details" >
             <intent-filter>
-                <action android:name="com.example.aib.restauwacja.RestaurationDetails" />
+                <action android:name="com.example.aib.restauwacja.RestaurationDetails_" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".UserReservations"
+            android:name=".UserReservations_"
             android:label="@string/title_activity_user_reservations" >
             <intent-filter>
                 <action android:name="com.example.aib.restauwacja.UserReservations" />
@@ -86,7 +78,7 @@
         </activity>
 
         <activity
-            android:name=".ReservationDetails"
+            android:name=".ReservationDetails_"
             android:label="@string/title_activity_reservation_details" >
             <intent-filter>
                 <action android:name="com.example.aib.restauwacja.ReservationDetails" />
